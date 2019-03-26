@@ -69,8 +69,8 @@
                                placeholder="(__)_.____-____" data-mask="(00)0.0000-0000">
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="celular" class="font-weight-bold">Telefone:</label>
-                        <input type="tel" class="form-control" id="celular" 
+                        <label for="telefone" class="font-weight-bold">Telefone:</label>
+                        <input type="tel" class="form-control" id="telefone" 
                                 placeholder="(__)____-____" data-mask="(00)0000-0000">
                     </div>
                 </div>
@@ -145,6 +145,7 @@
                     let advogado2 = document.getElementById('advogado2').value;
                     let advogado3 = document.getElementById('advogado3').value;
                     let reu = document.getElementById('reu').value;
+                    let telefone = document.getElementById('telefone').value;
                     var documento = new jsPDF(); 
                     documento.addImage(img,'PNG',5,10,50,10);
                     
@@ -162,9 +163,9 @@
 
                     //VALOR
                     documento.setFont("arial","bold");
-                    documento.text("Valor Reclamado conforme planilha anexada:",10,60);
+                    documento.text("Valor reclamado conforme planilha anexada:",10,60);
                     documento.setFont("arial","normal");
-                    documento.text(valor, 110, 60);
+                    documento.text(valor, 130, 60);
 
                     //AUTOR
                     documento.setFont("arial","bold");
@@ -179,16 +180,25 @@
                     documento.text(advogado1, 10, 90);
                     documento.text(advogado2, 10, 95);
                     documento.text(advogado3, 10, 100);
+
+                    //TELEFONE PARA CONTATO
                     
+                    documento.setFont("arial","bold");
+                    documento.text("Telefone para contato:",10,110);
+                    if(telefone.trim() !== ""){
+                        documento.setFont("arial","normal");
+                        documento.text(telefone, 70, 110);
+                    }
+                                        
                     //REU
                     documento.setFont("arial","bold");
-                    documento.text("Réu:",10,120);
+                    documento.text("Réu:",10,130);
                     documento.setFont("arial","normal");
-                    documento.text(reu, 30, 120);
+                    documento.text(reu, 30, 130);
 
                     let obsHtml = "<p> <u><strong><em>OBS: Senhor (a) Cliente, o seu Processo está no PJE do TJPE,"
                         +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tipe.jus.br"' +"</em></strong></u></p>";                    
-                    documento.fromHTML(obsHtml, 10, 125);
+                    documento.fromHTML(obsHtml, 10, 140);
                     documento.output("dataurlnewwindow");
                 }
             }
