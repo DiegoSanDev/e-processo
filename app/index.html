@@ -61,11 +61,21 @@
                         <input type="text" class="form-control" id="advogado3" readonly="true"
                                value="...">
                     </div>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="checkReu">
+                    <label class="custom-control-label" for="checkReu">Alterar Réu</label>
+                </div>
+
+                <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="reu" class="font-weight-bold">Réu:</label>
-                        <input type="reu" class="form-control" id="reu">
+                        <input type="text" class="form-control" id="reu" readonly="true"
+                               value="BANCO DO BRASIL">
                     </div>
                 </div>
+
                 <button type="button" class="btn btn-primary" onclick="gerarFormulario()" >Formulário</button>
             </form>
         </div>
@@ -78,6 +88,16 @@
         <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 
         <script>
+
+            $('#checkReu').change(function(){
+                let reu = document.getElementById('reu');
+                if(this.checked){
+                    reu.readOnly = false;
+                }else{
+                    reu.readOnly = true;
+                }
+            });
+           
            
            $('#checkAdvogados').change(function(){
                let advogado1 = document.getElementById('advogado1');
