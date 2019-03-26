@@ -31,7 +31,9 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="valor" class="font-weight-bold">Valor reclamado conforme planilha:</label>
+                        <label for="valor" class="font-weight-bold">
+                            Valor reclamado conforme planilha nexada:
+                        </abel>
                         <input type="text" class="form-control" id="valor">
                     </div>
                     <div class="form-group col-md-6">
@@ -49,17 +51,27 @@
                     <div class="form-group col-md-6">
                         <label for="advogado" class="font-weight-bold">Advogado 1:</label>
                         <input type="text" class="form-control" id="advogado1" readonly="true"
-                               value = "...">
+                               value = "DINARTE CORREIA FERNANDES JUNIOR - OAB/PE. 41.049">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="advogado2" class="font-weight-bold">Advogado 2:</label>
                         <input type="text" class="form-control" id="advogado2" readonly="true"
-                               value="...">
+                               value="ARTHUR VAZ DE OLIVEIRA FERNANDES - OAB/PE. 37.104">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="advogado3" class="font-weight-bold">Advogado 3:</label>
                         <input type="text" class="form-control" id="advogado3" readonly="true"
-                               value="...">
+                               value="SAMUEL SILVA MENDES - OAB/PE. 47.346">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="celular" class="font-weight-bold">Celular:</label>
+                        <input type="tel" class="form-control" id="celular" 
+                               placeholder="(__)_.____-____" data-mask="(00)0.0000-0000">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="celular" class="font-weight-bold">Telefone:</label>
+                        <input type="tel" class="form-control" id="celular" 
+                                placeholder="(__)____-____" data-mask="(00)0000-0000">
                     </div>
                 </div>
 
@@ -150,7 +162,7 @@
 
                     //VALOR
                     documento.setFont("arial","bold");
-                    documento.text("Valor Reclamado conforme Planilha:",10,60);
+                    documento.text("Valor Reclamado conforme planilha anexada:",10,60);
                     documento.setFont("arial","normal");
                     documento.text(valor, 110, 60);
 
