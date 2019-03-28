@@ -251,10 +251,16 @@
                 let checkProcessos = document.getElementById("checkProcessos")
                 if(checkProcessos.checked){
                     gerarDoisProcessos(true);
-                    location.reload();
+                    limparCampos()
+                    processosA=[]
+                    processosB=[]
+                    cont = 0
+                    btnProcessos.disabled = true
+                    qtdProcessos.innerHTML = ""
+                    checkProcessos.checked = false
                 }else{
                     if(gerarUmProcesso(true)){
-                        location.reload();
+                        limparCampos()
                     }
                 }
             }
