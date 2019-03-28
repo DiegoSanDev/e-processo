@@ -273,6 +273,10 @@
                     var documento = new jsPDF(); 
                     documento.addImage(img,'PNG',10,10,50,10);
                     
+                    documento.setProperties({
+                        title:processo
+                    })
+
                     //PROCESSO
                     documento.setFont("arial","bold");
                     documento.text("Processo nº:",10,30);
@@ -442,6 +446,10 @@
                 let obsHtml = "<p> <u><strong><em>OBS: Senhor (a) Cliente, o seu Processo está no PJE do TJPE,"
                         +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tipe.jus.br"' +"</em></strong></u></p>";                
                     documento.fromHTML(obsHtml, 10, 245);
+
+                    documento.setProperties({
+                        title:processosA[0]+'_'+(processosB[0] != null ? processosB[0] : '')
+                    })
                     
                 if(isBaixar){
                     documento.save();
