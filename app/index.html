@@ -121,7 +121,11 @@
                             <div class="d-flex justify-content-end">    
                                 <button type="button" class="btn btn-primary btn-sm" id="btnFormulario"
                                         onclick="gerarFormulario()">
-                                    GERAR FORMULÁRIO
+                                    BAIXAR
+                                </button>
+                                <button type="button" class="btn btn-primary btn-sm" id="btnFormulario"
+                                        style="margin-left:5px;" onclick="visualizarFormulario()">
+                                    VISUALIZAR
                                 </button>
                             </div>
                         </div>
@@ -235,20 +239,27 @@
                     thousands: "."
                 });
             });
-           
+            function visualizarFormulario(){
+                let checkProcessos = document.getElementById("checkProcessos")
+                if(checkProcessos.checked){
+                    gerarDoisProcessos(false);
+                }else{
+                   gerarUmProcesso(false)
+                }
+            }
             function gerarFormulario(){
                 let checkProcessos = document.getElementById("checkProcessos")
                 if(checkProcessos.checked){
-                    gerarDoisProcessos();
+                    gerarDoisProcessos(true);
                     location.reload();
                 }else{
-                    if(gerarUmProcesso()){
+                    if(gerarUmProcesso(true)){
                         location.reload();
                     }
                 }
             }
 
-            function gerarUmProcesso(){
+            function gerarUmProcesso(isBaixar){
                 if(validar()){
                     let processo = document.getElementById('processo').value;
                     let vara = document.getElementById('vara').value;
@@ -312,14 +323,18 @@
                     let obsHtml = "<p> <u><strong><em>OBS: Senhor (a) Cliente, o seu Processo está no PJE do TJPE,"
                         +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tipe.jus.br"' +"</em></strong></u></p>";                    
                     documento.fromHTML(obsHtml, 10, 130);
-                    documento.output("dataurlnewwindow");
+                    if(isBaixar){
+                        documento.save();
+                    }else{
+                        documento.output("dataurlnewwindow");
+                    }
                     return true;
                 }
                 return false;
             }
 
 
-            function gerarDoisProcessos(){
+            function gerarDoisProcessos(isBaixar){
                 var documento = new jsPDF(); 
                 documento.addImage(img,'PNG',5,10,50,10);
 
@@ -427,8 +442,12 @@
                 let obsHtml = "<p> <u><strong><em>OBS: Senhor (a) Cliente, o seu Processo está no PJE do TJPE,"
                         +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tipe.jus.br"' +"</em></strong></u></p>";                
                     documento.fromHTML(obsHtml, 10, 245);
-               
-                documento.output("dataurlnewwindow");
+                    
+                if(isBaixar){
+                    documento.save();
+                }else{
+                    documento.output("dataurlnewwindow");
+                }
             }
 
           
