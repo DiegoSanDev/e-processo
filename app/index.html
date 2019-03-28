@@ -368,60 +368,65 @@
                 documento.text("Réu:",10,110); 
                 documento.setFont("arial","normal");
                 documento.text(processosA[8], 30, 110);
+
+                let obs0Html = "<p> <u><strong><em>OBS: Senhor (a) Cliente, o seu Processo está no PJE do TJPE,"
+                        +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tipe.jus.br"' +"</em></strong></u></p>";                
+                    documento.fromHTML(obs0Html, 10, 120);
                 
-                documento.text("------------------------------------------------------------------------------------------------------",10,120); 
+                documento.text("------------------------------------------------------------------------------------------------------",10,145); 
+
                 // ==================== PROCESSO B ===============================
                 if(processosB !== null && processosB.length > 0){
                     //PROCESSO
                     documento.setFont("arial","bold");
-                    documento.text("Processo nº:",10,130);
+                    documento.text("Processo nº:",10,155);
                     documento.setFont("arial","normal");
-                    documento.text(processosB[0], 45, 130);
+                    documento.text(processosB[0], 45, 155);
 
                     //VARA
                     documento.setFont("arial","bold");
-                    documento.text("Vara:",10,140);
+                    documento.text("Vara:",10,165);
                     documento.setFont("arial","normal");
-                    documento.text(processosB[1], 30, 140);
+                    documento.text(processosB[1], 30, 165);
 
                     //VALOR
                     documento.setFont("arial","bold");
-                    documento.text("Valor reclamado conforme planilha anexada:",10,150);
+                    documento.text("Valor reclamado conforme planilha anexada:",10,175);
                     documento.setFont("arial","normal");
-                    documento.text(processosB[2], 125, 150);
+                    documento.text(processosB[2], 125, 175);
 
                     //AUTOR
                     documento.setFont("arial","bold");
-                    documento.text("Autor (a):",10,160);
+                    documento.text("Autor (a):",10,185);
                     documento.setFont("arial","normal");
-                    documento.text(processosB[3], 40, 160);
+                    documento.text(processosB[3], 40, 185);
 
                     //ADVOGADO
                     documento.setFont("arial","bold");
-                    documento.text("Advogados: ",10,170);
+                    documento.text("Advogados: ",10,195);
                     documento.setFont("arial","normal");
-                    documento.text(processosB[4], 10, 180);
-                    documento.text(processosB[5], 10, 185);
-                    documento.text(processosB[6], 10, 190);
+                    documento.text(processosB[4], 10, 205);
+                    documento.text(processosB[5], 10, 210);
+                    documento.text(processosB[6], 10, 215);
 
                     //TELEFONE PARA CONTATO
                     documento.setFont("arial","bold");
-                    documento.text("Telefone para contato:",10,200);
+                    documento.text("Telefone para contato:",10,225);
                     if(processosB[7].trim() !== ""){
                         documento.setFont("arial","normal");
-                        documento.text(processosB[7], 70, 200);
+                        documento.text(processosB[7], 70, 225);
                     }
 
                     //REU
                     documento.setFont("arial","bold");
-                    documento.text("Réu:",10,210); 
+                    documento.text("Réu:",10,235); 
                     documento.setFont("arial","normal");
-                    documento.text(processosB[8], 30, 210);
+                    documento.text(processosB[8], 30, 235);
                 }
 
                 let obsHtml = "<p> <u><strong><em>OBS: Senhor (a) Cliente, o seu Processo está no PJE do TJPE,"
                         +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tipe.jus.br"' +"</em></strong></u></p>";                
-                    documento.fromHTML(obsHtml, 10, 230);
+                    documento.fromHTML(obsHtml, 10, 245);
                
                 documento.output("dataurlnewwindow");
             }
