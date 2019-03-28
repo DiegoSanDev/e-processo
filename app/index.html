@@ -261,21 +261,21 @@
 
             function gerarUmProcesso(isBaixar){
                 if(validar()){
-                    let processo = document.getElementById('processo').value;
-                    let vara = document.getElementById('vara').value;
-                    let valor = document.getElementById('valor').value;
-                    let autor = document.getElementById('autor').value;
-                    let advogado1 = document.getElementById('advogado1').value;
-                    let advogado2 = document.getElementById('advogado2').value;
-                    let advogado3 = document.getElementById('advogado3').value;
-                    let reu = document.getElementById('reu').value;
-                    let telefone = document.getElementById('telefone').value;
-                    var documento = new jsPDF(); 
-                    documento.addImage(img,'PNG',10,10,50,10);
-                    
+                    let processo = document.getElementById('processo').value
+                    let vara = document.getElementById('vara').value
+                    let valor = document.getElementById('valor').value
+                    let autor = document.getElementById('autor').value
+                    let advogado1 = document.getElementById('advogado1').value
+                    let advogado2 = document.getElementById('advogado2').value
+                    let advogado3 = document.getElementById('advogado3').value
+                    let reu = document.getElementById('reu').value
+                    let telefone = document.getElementById('telefone').value
+                    var documento = new jsPDF();
+                    documento.addImage(img,'PNG',10,10,50,10)
                     documento.setProperties({
                         title:processo
                     })
+                    documento.viewerPreferences({'DisplayDocTitle': true});
 
                     //PROCESSO
                     documento.setFont("arial","bold");
@@ -328,7 +328,7 @@
                         +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tipe.jus.br"' +"</em></strong></u></p>";                    
                     documento.fromHTML(obsHtml, 10, 130);
                     if(isBaixar){
-                        documento.save();
+                        documento.save(processo+".pdf");
                     }else{
                         documento.output("dataurlnewwindow");
                     }
@@ -441,18 +441,19 @@
                     documento.text("Réu:",10,235); 
                     documento.setFont("arial","normal");
                     documento.text(processosB[8], 30, 235);
-                }
 
-                let obsHtml = "<p> <u><strong><em>OBS: Senhor (a) Cliente, o seu Processo está no PJE do TJPE,"
+                    let obsHtml = "<p> <u><strong><em>OBS: Senhor (a) Cliente, o seu Processo está no PJE do TJPE,"
                         +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tipe.jus.br"' +"</em></strong></u></p>";                
                     documento.fromHTML(obsHtml, 10, 245);
+                }
 
                     documento.setProperties({
                         title:processosA[0]+'_'+(processosB[0] != null ? processosB[0] : '')
                     })
                     
                 if(isBaixar){
-                    documento.save();
+                    let nomePDF = processosA[0]+'_'+(processosB[0] != null ? processosB[0] : '')
+                    documento.save(nomePDF+".pdf");
                 }else{
                     documento.output("dataurlnewwindow");
                 }
