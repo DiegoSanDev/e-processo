@@ -251,10 +251,11 @@
                 let checkProcessos = document.getElementById("checkProcessos")
                 if(checkProcessos.checked){
                     gerarDoisProcessos(true);
-                    location.reload(true);
+                    location.reload();
                 }else{
-                    gerarUmProcesso(true)
-                    window.location.reload(true);
+                    if(gerarUmProcesso(true)){
+                        location.reload();
+                    }
                 }
             }
 
