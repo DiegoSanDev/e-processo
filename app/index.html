@@ -396,55 +396,56 @@
 
                 // ==================== PROCESSO B ===============================
                 if(processosB !== null && processosB.length > 0){
+                    documento.addImage(img,'PNG',5,150,50,10);
                     //PROCESSO
                     documento.setFont("arial","bold");
-                    documento.text("Processo nº:",10,155);
+                    documento.text("Processo nº:",10,170);
                     documento.setFont("arial","normal");
-                    documento.text(processosB[0], 45, 155);
+                    documento.text(processosB[0], 45, 170);
 
                     //VARA
                     documento.setFont("arial","bold");
-                    documento.text("Vara:",10,165);
+                    documento.text("Vara:",10,180);
                     documento.setFont("arial","normal");
-                    documento.text(processosB[1], 30, 165);
+                    documento.text(processosB[1], 30, 180);
 
                     //VALOR
                     documento.setFont("arial","bold");
-                    documento.text("Valor reclamado conforme planilha anexada:",10,175);
+                    documento.text("Valor reclamado conforme planilha anexada:",10,190);
                     documento.setFont("arial","normal");
-                    documento.text(processosB[2], 125, 175);
+                    documento.text(processosB[2], 125, 190);
 
                     //AUTOR
                     documento.setFont("arial","bold");
-                    documento.text("Autor (a):",10,185);
+                    documento.text("Autor (a):",10,200);
                     documento.setFont("arial","normal");
-                    documento.text(processosB[3], 40, 185);
+                    documento.text(processosB[3], 40, 200);
 
                     //ADVOGADO
                     documento.setFont("arial","bold");
-                    documento.text("Advogados: ",10,195);
+                    documento.text("Advogados: ",10,210);
                     documento.setFont("arial","normal");
-                    documento.text(processosB[4], 10, 205);
-                    documento.text(processosB[5], 10, 210);
-                    documento.text(processosB[6], 10, 215);
+                    documento.text(processosB[4], 10, 220);
+                    documento.text(processosB[5], 10, 225);
+                    documento.text(processosB[6], 10, 230);
 
                     //TELEFONE PARA CONTATO
                     documento.setFont("arial","bold");
-                    documento.text("Telefone para contato:",10,225);
+                    documento.text("Telefone para contato:",10,240);
                     if(processosB[7].trim() !== ""){
                         documento.setFont("arial","normal");
-                        documento.text(processosB[7], 70, 225);
+                        documento.text(processosB[7], 70, 240);
                     }
 
                     //REU
                     documento.setFont("arial","bold");
-                    documento.text("Réu:",10,235); 
+                    documento.text("Réu:",10,250); 
                     documento.setFont("arial","normal");
-                    documento.text(processosB[8], 30, 235);
+                    documento.text(processosB[8], 30, 250);
 
                     let obsHtml = "<p> <u><strong><em>OBS: Senhor (a) Cliente, o seu Processo está no PJE do TJPE,"
                         +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tipe.jus.br"' +"</em></strong></u></p>";                
-                    documento.fromHTML(obsHtml, 10, 245);
+                    documento.fromHTML(obsHtml, 10, 260);
                 }
 
                     documento.setProperties({
