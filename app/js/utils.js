@@ -8,7 +8,6 @@ function limparCampos(){
 
 $('#checkProcessos').change(function(){
     let btnProcessos = document.getElementById('btnProcessos')
-    let btnFormulario = document.getElementById('btnFormulario')
     let qtdProcessos = document.getElementById('qtdProcessos');
     if(this.checked){
         btnProcessos.disabled = false
