@@ -295,7 +295,7 @@
                     documento.text(reu, 30, 110);
 
                     let obsHtml = "<p> <u><strong><em>OBS: Senhor (a) Cliente, o seu Processo está no PJE do TJPE,"
-                        +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tipe.jus.br"' +"</em></strong></u></p>";                    
+                        +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tjpe.jus.br"'+' "consulta pública de processos"'+"</em></strong></u></p>";                    
                     documento.fromHTML(obsHtml, 10, 130);
                     if(isBaixar){
                         documento.save(processo+".pdf");
@@ -359,7 +359,7 @@
                 documento.text(processosA[8], 30, 110);
 
                 let obs0Html = "<p> <u><strong><em>OBS: Senhor (a) Cliente, o seu Processo está no PJE do TJPE,"
-                        +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tipe.jus.br"' +"</em></strong></u></p>";                
+                        +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tjpe.jus.br"'+' "consulta pública de processos"'+"</em></strong></u></p>";                
                     documento.fromHTML(obs0Html, 10, 120);
                 
                 documento.text("------------------------------------------------------------------------------------------------------",10,145); 
@@ -414,7 +414,7 @@
                     documento.text(processosB[8], 30, 250);
 
                     let obsHtml = "<p> <u><strong><em>OBS: Senhor (a) Cliente, o seu Processo está no PJE do TJPE,"
-                        +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tipe.jus.br"' +"</em></strong></u></p>";                
+                        +"<br />acompanhe o andamento atrávés do site do Tribunal: "+ '"pje.tjpe.jus.br"' +' "consulta pública de processos"'+"</em></strong></u></p>";                
                     documento.fromHTML(obsHtml, 10, 260);
                 }
 
